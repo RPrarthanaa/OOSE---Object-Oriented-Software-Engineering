@@ -1,0 +1,32 @@
+__COMPULSORY_CRITERIA_DESCRIPTIONS__
+(e) I've employed the Strategy Pattern to implement the system for selecting a final effort estimate value through different approaches. The "ApproachInterface" serves as the common interface implemented by the "FindMax," "FindMedian," and "DiscussEstimate" classes. This interface defines the "doOperation()" method, which exhibits polymorphic behaviour across all three classes.
+Each of the classes have their own implementations of the "doOperation()" method, which address the same goal of returning a final integer for the effort estimate. Hence I've chosen the Strategy Pattern as a more appropriate design choice than the Template Method Pattern.
+
+(f) I've utilized the Composite Design Pattern to represent the Work Breakdown Structure (WBS) in a hierarchical manner, where tasks with subtasks are the composite nodes, and the leaf node represents an individual subtask. The interface, TaskInterface is implemented by the TaskList and SimpleTask classes respectively. TaskInterface defines method signatures such as getCurrentTaskID(), getSumOfEffortEstimate(), getUnknownTaskCount(), and a couple more (see UML diagram), all of which are implemented in both TaskList and SimpleTask, exhibiting polymorphism. 
+Methods such as getSumOfEffortEstimate(), getUnknownTaskCount() and display() enable recursive aggregation to traverse through the entirety of the tree, treating both TaskList and SimpleTask objects uniformly. For instance, getSumOfEffortEstimate() calculates the total effort estimate by recursively traversing through the entire WBS, summing up effort estimates of individual tasks regardless of their type.
+
+
+
+__ADDITIONAL_CRITERIA_DESCRIPTIONS__
+(a) ./gradlew check did set off PMD warnings initially but I've fixed them all so that no warnings are detected. No warnings have been suppressed.
+
+(b) I've used a few ArrayLists and a HashMap. The most notable use of the ArrayList is in TaskList where the container is used to store the list of subtasks for a particular task. The HashMap has been used to store instances of the concrete classes that implement ApproachInterface. The key corresponds to the option each strategy represented in the sub-menu, with the values being the instances of the respective classes.
+
+(c)	
+	ApproachInterface 	-> Sets the blueprint for the different approaches involved in effort estimation calculation
+	FindMax 		-> Implements ApproachInterface and selects the highest integer of the effort estimate list as the final estimate
+	FindMedian 		-> Implements ApproachInterface and selects the median of the effort estimate list as the final estimate
+	DiscussEstimate		-> Implements ApproachInterface and the user is asked to enter the final estimate after discussion
+	TaskInterface 		-> Sets the contract for the different tasks in the work breakdown structure
+	SimpleTask		-> Implements TaskInterface and represents the simplest task 
+	TaskList		-> Implements TaskInterface and represents the tasks with subtasks
+	SettingsConfiguration	-> Represents the class that stores the configuration settings and the HashMap which associates each strategy option with its
+				    corresponding implementation
+	FileIO			-> Holds the reading and writing methods of from/to the file
+	WBSFormatException	-> A custom exception class that detects errors in the format of the file containing sample task data
+	WBSEditorApp		-> The entry point for the program which displays the menu after reading from a file, selects options to update the effort estimate and/or conifgure settings and write the updated data back to the same file
+
+> A short description of methods are included in block comments above the method implementation.
+
+(d) I've designed an Exception class, WBSFormatException, which detects the errors in format of the file being read from. IO Exceptions and WBSFormatException have been caught separately (in the main method) from the others (in the menu method) since the program terminates immediately after catching them. On the other hand, the program is expected to continue after exceptions such as IllegalArgumentException and InputMismatchException have been caught.
+Logging statements have been incorporated into the code whenever an exception is caught, and to indicate current state of the program (eg. reading, writing, configuring settings, ...). IOExceptions and WBSFormatExceptions are logged at the SEVERE priority level, as they result in the termination of the program. Other exceptions are logged at the WARNING level, while general information about program activities is logged at the INFO level.
