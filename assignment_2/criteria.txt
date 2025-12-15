@@ -1,0 +1,62 @@
+(c) __EXCEPTIONS_AND_LOGGING__
+Since there is no user input and guard conditions handle the majority of scenarios, the primary exceptions that need handling are IO exceptions during file writing. 
+These exceptions are critical and are logged as severe errors to ensure they are highlighted for immediate attention.
+Other logging statements are logged at info level, including FAILURE messages as they are part of the simulation and not due to external errors.
+
+(d) __FACTORY_IMPLEMENTATION_AND_DEPENDENCY_INJECTION__
+The StateFactory class is designed to determine the initial state of a bike (BikeState) based on the input message received. 
+The StateFactory class contains a single method that returns an instance of either ForPurchaseState or InServiceState depending on the input message. 
+BikeState is then injected to a Bike object via its constructor, eliminating hard-coded dependencies.
+
+(e) __OBSERVER_PATTERN__
+
+The Observer Pattern is used to handle the responses to any event that may occur in the duration of the program. 
+An event causes the subject to change it’s state and all the observers are notified and updated automatically. 
+
+In this implementation, the 'BikeShop' class serves as the subject, generating events and notifying its observers. 
+There are two concrete observers, 'Display' and 'WriteToFile', which handle the events by displaying messages on the console and writing them to a file, respectively.
+
+The 'BikeShop' class is responsible for generating events. It maintains a list of observers and notifies them whenever there is an event, such as the output of error messages, input messages, and statistics.
+
+Both 'Display' and 'WriteToFile' observers are registered in the 'observers' list of the 'BikeShop' class. 
+When an event occurs, the 'BikeShop' class notifies all registered observers by calling their respective update methods.
+
+The decision to use a single observer pattern for all types of messages including errors is based on the need to avoid code duplication. 
+A separate observer class for errors would lead to redundant code segments and errors would only occur in certain instances as opposed to regular input messages and statistics. 
+Hence, to maintain the organised structure, the errors would be passed off as Strings to ‘WriteToFile’ and ‘Display’ observers, where the Display class would also independently track the count of failures.
+
+
+(f) __STATE_PATTERN_____
+In this program, the class 'Bike' represents the subject whose state changes between 'ForPurchase', 'Waiting', and 'InService'. 
+A bike can initially be in the 'ForPurchase' or 'InService' state depending on the whether a purchase or a drop off occurs. 
+The 'StateFactory' class is used to assign the initial state of a bike according to the event that occurred.
+
+### ForPurchase State
+When a 'PURCHASE-IN-STORE' or 'PURCHASE-ONLINE' request comes through, the initial state of the bike is set to 'ForPurchase', indicating that the bike is available for purchase.
+
+- In-Store Purchase: If the bike is purchased in-store, there is no further transition, so the state flow ends for that bike.
+- Online Purchase: If the bike is sold online, the state transitions to the 'Waiting' state where it awaits pickup.
+
+### InService State
+In the event of a 'DROP-OFF' request, the initial state is set to 'InService' if the request is approved.
+
+- Service Completion: The method 'twoDays()' tracks whether two days have passed since service. 
+        If so, this method transitions the state of the bike to the 'Waiting' state where the bike waits to be picked up and paid for.
+
+### WaitingState
+In this state, a bike is awaiting pickup after maintenance or being purchased online. 
+If the bike is requested for 'PICK-UP' before service completion, an error is displayed. 
+If servicing is done, it is paid for before the state flow ends.
+
+This approach allows a clear and structured handling of state transitions based on the occurrence of specific events.
+
+
+
+__OTHER_INFORMATION____________________
+
+The program is run by typing out 
+    ./gradlew run 
+in the CLI.
+
+The results of the simulation displayed onto the console are also written to "sim_results.txt".
+"app0.log" stores a log of the program's progress.

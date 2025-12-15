@@ -1,0 +1,68 @@
+WELCOME TO THE BIKE SHOP SIMULATOR!!
+----------------
+
+Day: 0  Cash: $15000  Bikes_For_Purchase: 50   Bikes_In_Service: 0   Bikes_For_Pickup: 0  Total_Bike_Count: 50
+----------------
+PURCHASE-ONLINE usfwdk@lqb.xet
+PURCHASE-ONLINE hvnlwuz@rcbaq.kxi
+
+Day: 1  Cash: $17000  Bikes_For_Purchase: 48   Bikes_In_Service: 0   Bikes_For_Pickup: 2  Total_Bike_Count: 50
+----------------
+FAILURE: Invalid Message
+DROP-OFF ajx@yvrnl.ryt
+FAILURE: Invalid Message
+
+Day: 2  Cash: $17000  Bikes_For_Purchase: 48   Bikes_In_Service: 1   Bikes_For_Pickup: 2  Total_Bike_Count: 51
+----------------
+PICK-UP usfwdk@lqb.xet
+DROP-OFF zght@dntugz.vvk
+DROP-OFF exjufpx@qhewk.ejd
+PURCHASE-IN-STORE
+
+Day: 3  Cash: $18000  Bikes_For_Purchase: 47   Bikes_In_Service: 3   Bikes_For_Pickup: 1  Total_Bike_Count: 51
+----------------
+DROP-OFF dgllfdt@gspdbqv.bqy
+PURCHASE-IN-STORE
+PURCHASE-IN-STORE
+DROP-OFF none@oinz.juf
+
+Day: 4  Cash: $20000  Bikes_For_Purchase: 45   Bikes_In_Service: 4   Bikes_For_Pickup: 2  Total_Bike_Count: 51
+----------------
+PURCHASE-ONLINE qszyly@vdht.asl
+PICK-UP hvnlwuz@rcbaq.kxi
+PURCHASE-IN-STORE
+PURCHASE-ONLINE xagtbp@xpzkhn.flt
+PURCHASE-ONLINE spb@xmqi.nyi
+
+Day: 5  Cash: $24000  Bikes_For_Purchase: 41   Bikes_In_Service: 2   Bikes_For_Pickup: 6  Total_Bike_Count: 49
+----------------
+PICK-UP hvnlwuz@rcbaq.kxi
+FAILURE: No Bike Registered To This Customer Email
+
+Day: 6  Cash: $24000  Bikes_For_Purchase: 41   Bikes_In_Service: 0   Bikes_For_Pickup: 8  Total_Bike_Count: 49
+----------------
+
+Day: 7  Cash: $23000  Bikes_For_Purchase: 41   Bikes_In_Service: 0   Bikes_For_Pickup: 8  Total_Bike_Count: 49
+----------------
+PURCHASE-ONLINE mijf@uxilnv.fth
+DROP-OFF ypldady@xwoamaz.eep
+DROP-OFF jjnbgpt@xxpioq.mod
+PURCHASE-ONLINE fxiotto@cbeivn.uyv
+PURCHASE-ONLINE egey@hlst.pkc
+PICK-UP fxiotto@cbeivn.uyv
+PICK-UP qszyly@vdht.asl
+
+Day: 8  Cash: $26000  Bikes_For_Purchase: 38   Bikes_In_Service: 2   Bikes_For_Pickup: 9  Total_Bike_Count: 49
+----------------
+PURCHASE-ONLINE xljbj@tiq.aun
+PURCHASE-IN-STORE
+
+Day: 9  Cash: $28000  Bikes_For_Purchase: 36   Bikes_In_Service: 2   Bikes_For_Pickup: 10  Total_Bike_Count: 48
+----------------
+
+Day: 10  Cash: $28000  Bikes_For_Purchase: 36   Bikes_In_Service: 0   Bikes_For_Pickup: 12  Total_Bike_Count: 48
+
+
+**********************************************
+Total_Input_Messages: 28   Total_Failures: 3
+**********************************************
