@@ -18,17 +18,31 @@ Part of my Software Engineering Degree at Curtin University Colombo in 2024. My 
   <tr>
     <td>2023</td>
     <td>PDI</td>
-    <td>UCP, DSA</td>
+    <td>
+      <a href="https://github.com/RPrarthanaa/UCP---Unix-and-C-Programming">UCP</a>, 
+      <a href="https://github.com/RPrarthanaa/DSA---Data-Structures-and-Algorithms">DSA</a>
+    </td>
   </tr>
   <tr>
     <td>2024</td>
-    <td>OOSE, OS</td>
-    <td>MAD, DC, DBS, CCSEP</td>
+    <td>
+      <a href="https://github.com/RPrarthanaa/OOSE---Object-Oriented-Software-Engineering">OOSE</a>, 
+      <a href="https://github.com/RPrarthanaa/OS---Operating-Systems">OS</a>
+    </td>
+    <td>
+      <a href="https://github.com/RPrarthanaa/MAD---Mobile-Application-Development">MAD</a>, 
+      <a href="https://github.com/RPrarthanaa/DC---Distributed-Computing">DC</a>, 
+      <a href="https://github.com/RPrarthanaa/DBS---Database-Systems">DBS</a>, 
+      <a href="https://github.com/RPrarthanaa/CCSEP---Cyber Crime and Security Enhanced Programming">CCSEP</a>
+    </td>
   </tr>
   <tr>
     <td>2025</td>
     <td></td>
-    <td>CCP2, SAED</td>
+    <td>
+      <a href="https://github.com/RPrarthanaa/CCP2---Capstone-Computing-Project-2">CCP2</a>, 
+      <a href="https://github.com/RPrarthanaa/SAED---Software-Architecture-and-Extensible-Design">SAED</a>
+    </td>
   </tr>
 </table>
 
