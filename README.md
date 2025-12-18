@@ -68,7 +68,7 @@ Developed an application to help perform work planning and effort estimation
 Developed an application to simulate a bicycle shop, which  both  sells  and  repairs  bikes
 
 ## Features:
-- [ ] Implement a factory to handle bike types and orders dynamically
-- [ ] Implement Observer and State Patterns
+- [ ] Implemented a factory to handle bike types and orders dynamically
+- [ ] Implemented Observer and State Patterns
 - [ ] Display detailed logging and error handling
 
